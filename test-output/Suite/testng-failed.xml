@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [Suite]">
+  <test thread-count="5" parallel="tests" name="PixelEmulator(failed)">
+    <classes>
+      <class name="testcases.TestCases">
+        <methods>
+          <include name="addProductToCartTest"/>
+          <include name="tearDownAppium"/>
+          <include name="setUpAppium"/>
+          <include name="beforesuite"/>
+          <include name="afterClass"/>
+          <include name="setUpPage"/>
+          <include name="afterTest"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- testcases.TestCases -->
+    </classes>
+  </test> <!-- PixelEmulator(failed) -->
+</suite> <!-- Failed suite [Suite] -->
