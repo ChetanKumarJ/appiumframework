@@ -9,7 +9,7 @@
 plugins {
     // Apply the java-library plugin for API and implementation separation.
     id 'java-library'
-    id 'org.testng:testng:6.14.3'
+    id 'java'
 }
 
 repositories {
@@ -18,7 +18,13 @@ repositories {
 }
 
 dependencies {
-    // Use JUnit Jupiter for testing.
+	implementation 'org.apache.commons:commons-io:1.3.2'
+	implementation 'org.apache.commons:commons-io:1.3.2'
+	implementation 'org.apache.commons:commons-io:1.3.2'
+	implementation 'org.apache.commons:commons-io:1.3.2'
+	implementation 'org.apache.commons:commons-io:1.3.2'
+
+	// Use JUnit Jupiter for testing.
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
 
     // This dependency is exported to consumers, that is to say found on their compile classpath.
@@ -56,22 +62,22 @@ dependencies {
     
 }
 
-test {
-	useTestNG() //Tells Surefire to use TestNG
+//test{
+//useTestNG() //Tells Surefire to use TestNG
 	//suites 'com.insurance.poc/testsuiteXML/testng.xml'  //Path to your TestNG XML file, if using one
-	suiteXmlFiles = fileTree(dir: 'com.insurance.poc/testsuiteXML' , include: 'testng.xml')
+//	suiteXmlFiles = fileTree(dir: 'com.insurance.poc/testsuiteXML' , include: 'testng.xml')
 	
-	testLogging {
-		events 'passed', 'skipped', 'failed' //Customize test log output
-	}
+//	testLogging {
+//		events 'passed', 'skipped', 'failed' //Customize test log output
+//	}
 	//Configure Surefire for parallel execution
 	/**systemProperty 'surefire.testng.threadCount', '5' //Number of threads to use for parallel execution
 	systemProperty 'surefire.testng.parallel', 'methods' //Parallel mode ('methods', 'classes', 'both', 'none')
 	systemProperty 'surefire.testng.useUnlimitedThreads', 'true' //Allow unlimited threads (recommended for parallel)**/
 	
 	// Surefire parallel execution settings
-	maxParallelForks = Runtime.runtime.availableProcessors() // Use the number of available processors as the default thread count
-}
+//	maxParallelForks = Runtime.runtime.availableProcessors() // Use the number of available processors as the default thread count
+//}
 
 // Apply a specific Java toolchain to ease working on different environments.
 java {
@@ -79,7 +85,6 @@ java {
         languageVersion = JavaLanguageVersion.of(18)
     }
 }
-
 tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
